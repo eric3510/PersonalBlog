@@ -1,4 +1,4 @@
-package com.personalblog.personalblog.passport.controller;
+package com.personalblog.passport.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
