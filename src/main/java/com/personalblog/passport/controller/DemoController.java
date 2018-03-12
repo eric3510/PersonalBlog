@@ -1,5 +1,6 @@
 package com.personalblog.passport.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController{
     @RequestMapping("/")
     public String home(){
-        return "hello world";
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("name", "hello world");
+        return jsonObject.toJSONString();
     }
 }
