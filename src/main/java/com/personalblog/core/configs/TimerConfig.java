@@ -103,6 +103,10 @@ public class TimerConfig {
     }
 
 
+    /***
+     * 获取本地IP
+     * @return
+     */
     private String getLocalIp(){
         Enumeration<NetworkInterface> n = null;
         try{

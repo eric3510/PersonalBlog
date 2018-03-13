@@ -33,8 +33,6 @@
         </trim>
     </select>
 
-
-
     <!--<select id="count" parameterType="com.icu.core.dao.mysql.SqlTemplate" resultType="java.lang.Integer">-->
        <!--SELECT count(1) FROM ${tableName} WHERE-->
         <!--<trim prefixOverrides="and">-->
