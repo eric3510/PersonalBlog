@@ -13,55 +13,55 @@ public class MongodbConfig {//extends AbstractMongoConfiguration
     /***
      * 用户名称
      */
-    @Value("${mongo.username}")
+    //@Value("${mongo.username}")
     private String userName;
 
     /***
      * 数据库名称
      */
-    @Value("${mongo.database.name}")
+    //@Value("${mongo.database.name}")
     private String databaseName;
 
     /***
      * 密码
      */
-    @Value("${mongo.password}")
+    //@Value("${mongo.password}")
     private String password;
 
     /***
      * 端口号
      */
-    @Value("${mongo.port}")
+    //@Value("${mongo.port}")
     private int port;
 
     /***
      * 网络地址
      */
-    @Value("${mongo.host}")
+    //@Value("${mongo.host}")
     private String host;
 
     /***
      * 每个主机的连接数
      */
-    @Value("${mongo.connections.per.host}")
+    //@Value("${mongo.connections.per.host}")
     private Integer connectionsPerHost;
 
     /***
      * 线程队列数
      */
-    @Value("${mongo.thread.count}")
+//    //@Value("${mongo.thread.count}")
     private Integer threadCount;
 
     /***
      * 最大等待连接的线程阻塞时间(单位:毫秒)
      */
-    @Value("${mongo.max.wait.time}")
+//    //@Value("${mongo.max.wait.time}")
     private Integer maxWaitTime;
 
     /***
      * 连接超时的时间.0是默认和无限(单位:毫秒)
      */
-    @Value("${mongo.time.out}")
+//    //@Value("${mongo.time.out}")
     private Integer timeOut;
 
     protected String getDatabaseName(){

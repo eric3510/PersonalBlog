@@ -3,7 +3,7 @@ package com.personalblog.core.utils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.baidu.unbiz.easymapper.MapperFactory;
+//import com.baidu.unbiz.easymapper.MapperFactory;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.tomcat.util.codec.DecoderException;
 import org.springframework.cglib.beans.BeanCopier;
@@ -358,11 +358,11 @@ public final class BaseUtils{
             if(!copyNulls && ext == null){
                 fastCopy(dest, orig);
             }else{
-                MapperFactory.getCopyByRefMapper()
-                        .mapClass(orig.getClass(), dest.getClass())
-                        .exclude(ext)
-                        .mapOnNull(copyNulls)
-                        .registerAndMap(orig, dest);
+//                MapperFactory.getCopyByRefMapper()
+//                        .mapClass(orig.getClass(), dest.getClass())
+//                        .exclude(ext)
+//                        .mapOnNull(copyNulls)
+//                        .registerAndMap(orig, dest);
             }
         }
     }

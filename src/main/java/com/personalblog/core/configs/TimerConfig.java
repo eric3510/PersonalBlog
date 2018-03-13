@@ -18,7 +18,7 @@ import java.util.Enumeration;
  * TimerConfig 定时任务轮配置
  */
 @Component
-public class TimerConfig {
+public class TimerConfig{
     private Logger logger = LoggerFactory.getLogger(getClass());
 
 
@@ -51,43 +51,43 @@ public class TimerConfig {
 
     public static final String GET = "GET";
 
-    public TimerConfig() {
+    public TimerConfig(){
     }
 
-    @Value("${timer.hashed.wheel.producer.task}")
-    public void setHashedWheelProducerTask(String hashedWheelProducerTask) {
+    //@Value("${timer.hashed.wheel.producer.task}")
+    public void setHashedWheelProducerTask(String hashedWheelProducerTask){
         this.hashedWheelProducerTask = hashedWheelProducerTask;
     }
 
-    @Value("${timer.encode}")
-    public void setEncode(String encode) {
+    //@Value("${timer.encode}")
+    public void setEncode(String encode){
         TimerConfig.encode = encode;
     }
 
-    @Value("${timer.token}")
-    public void setToken(String token) {
+    //@Value("${timer.token}")
+    public void setToken(String token){
         TimerConfig.token = token;
     }
 
-    @Value("${timer.url.address}")
-    public void setUrlAddress(String urlAddress) {
+    //@Value("${timer.url.address}")
+    public void setUrlAddress(String urlAddress){
         TimerConfig.urlAddress = urlAddress;
     }
 
-    @Value("${timer.test.ip}")
-    public void setTestIp(String testIp) {
+    //@Value("${timer.test.ip}")
+    public void setTestIp(String testIp){
         TimerConfig.testIp = testIp;
     }
 
     @PostConstruct
-    public void init() {
+    public void init(){
         this.isIp();
     }
 
-    private void isIp() {
+    private void isIp(){
         String testIp = TimerConfig.testIp;
         //判断是否为测试或者本地环境
-        if (BaseUtils.isBlank(testIp)) {
+        if(BaseUtils.isBlank(testIp)){
             return;
         }
         logger.info("testIp = " + testIp);
@@ -131,7 +131,7 @@ public class TimerConfig {
         return null;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         TimerConfig config = new TimerConfig();
         System.out.println(config.getLocalIp());
 //        final String url = "http://preadmin.hushijie.com.cn/demo/producer";

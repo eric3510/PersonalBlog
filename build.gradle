@@ -11,6 +11,7 @@ buildscript {
 }
 
 apply plugin: 'java'
+apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
@@ -24,18 +25,39 @@ repositories {
 
 
 dependencies {
-	compile('mysql:mysql-connector-java')
+//	compile('mysql:mysql-con nector-java')
+//	compile('org.springframework.boot:spring-boot-starter')
+//	compile('com.baidu.unbiz:easy-mapper:1.0.3')
+
+//	compile('com.alibaba:fastjson:1.2.8')
+//	compile("org.projectlombok:lombok:1.12.6")
+//	compile('org.apache.commons:commons-lang3:3.4')
+//	compile('commons-httpclient:commons-httpclient:3.0-rc4')
+//	compile(group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.2')
+//	compile('org.springframework.boot:spring-boot-starter-web')
+//	testCompile('org.springframework.boot:spring-boot-starter-test')
+//	compile('mysql:mysql-con nector-java')
+	
+
 	compile('com.alibaba:fastjson:1.2.8')
-	compile('org.springframework.boot:spring-boot-starter')
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.springframework.boot:spring-boot-devtools')
-	compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '1.3.1'
-	compile('com.baidu.unbiz:easy-mapper:1.0.3')
-	compile('org.apache.commons:commons-lang3:3.4')
-//	compile('org.eclipse.ecf:org.apache.commons.codec:jar:1.9.0.v20170208-1614')
-	compile('commons-httpclient:commons-httpclient:3.0-rc4')
-	compile('org.apache.httpcomponents:httpclient:4.3')
 	compile("org.projectlombok:lombok:1.12.6")
+	compile('org.apache.commons:commons-lang3:3.4')
+	compile('commons-httpclient:commons-httpclient:3.0-rc4')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	compile(group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25')
+	compile(group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.2')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+
+
+
+	//compile('org.apache.httpcomponents:httpclient:4s.3')
+	//compile('org.springframework.boot:spring-boot-starter')
+	//compile('org.springframework.boot:spring-boot-starter-web')
+	//https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient
+	//compile group: 'commons-httpclient', name: 'commons-httpclient', version: '3.1'
+	//compile('org.springframework.boot:spring-boot-devtools')
+	//compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '1.3.1'
+	//compile('org.eclipse.ecf:org.apache.commons.codec:jar:1.9.0.v20170208-1614')
+	//compile(group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25')
 }
