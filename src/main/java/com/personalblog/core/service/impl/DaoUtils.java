@@ -28,4 +28,12 @@ public class DaoUtils{
                 DaoUtils.UNDERLINE_T
         );
     }
+
+    public static void main(String[] args){
+        String a = "123";
+        String c = "123";
+        String b = new String("123");
+        System.out.println(a == c);
+        System.out.println(a.equals(b));
+    }
 }

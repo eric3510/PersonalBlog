@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.personalblog.core.mysql.BaseMapper" >
+<mapper namespace="com.personalblog.core.mysql.BaseMapper">
     <select id="listByKeys" parameterType="com.personalblog.core.mysql.SqlTemplate" resultType="java.util.Map">
         SELECT * FROM ${tableName} WHERE ${object} IN
         <foreach collection="objectList" item="object" index="index" open="(" close=")" separator=",">
