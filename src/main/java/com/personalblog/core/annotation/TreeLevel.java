@@ -3,7 +3,7 @@ package com.personalblog.core.annotation;
 import java.lang.annotation.*;
 
 /***
- * @author 王强 Email : wangqiang@hushijie.com.cn
+ * @author 王强 Email : eric3510@foxmail.com
  * @version 创建时间：2018/2/2
  * 树结构层级标识
  */

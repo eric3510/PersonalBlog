@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author 王强 wangqiang@hushijie.com.cn
+ * @author 王强 eric3510@foxmail.com
  * @version 创建时间：2017/09/27 13:50
  * BusinessException
  **/

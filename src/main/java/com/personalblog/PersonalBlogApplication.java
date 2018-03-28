@@ -15,26 +15,25 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.sql.DataSource;
 
-@MapperScan(basePackages = "com.personalblog.core") //mapper的包
-@EnableAutoConfiguration
-@SpringBootApplication
-@ComponentScan //指定扫描的mapper接口所在的包
-//启动注解事务管理
-@EnableTransactionManagement
+@ComponentScan
 @RestController
+@SpringBootApplication
+@EnableAutoConfiguration
+@EnableTransactionManagement
+@MapperScan(basePackages = "com.personalblog.core")
 public class PersonalBlogApplication{
     private static final String TYPE_ALIASES_PACKAGE = "com.personalblog.core.mysql";
     private static final String MAPPER_LOCATION = "classpath:/mybatis/*.xml";
-
-    @Bean
-    @Autowired
-    public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception{
-        final SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-        sqlSessionFactoryBean.setDataSource(dataSource);
-        sqlSessionFactoryBean.setTypeAliasesPackage(TYPE_ALIASES_PACKAGE);
-        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(MAPPER_LOCATION));
-        return sqlSessionFactoryBean.getObject();
-    }
+//
+//    @Bean
+//    @Autowired
+//    public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception{
+//        final SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+//        sqlSessionFactoryBean.setDataSource(dataSource);
+//        sqlSessionFactoryBean.setTypeAliasesPackage(TYPE_ALIASES_PACKAGE);
+//        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(MAPPER_LOCATION));
+//        return sqlSessionFactoryBean.getObject();
+//    }
 
     public static void main(String[] args){
         SpringApplication.run(PersonalBlogApplication.class, args);

@@ -3,7 +3,7 @@ package com.personalblog.core.configs;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 /**
- * @author 王强 wangqiang@hushijie.com.cn
+ * @author 王强 eric3510@foxmail.com
  * @version 创建时间：2017/10/17 15:00
  * mongodb连接池
  **/

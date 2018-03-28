@@ -13,7 +13,7 @@ import java.net.SocketException;
 import java.util.Enumeration;
 
 /***
- * @author 王强 Email : wangqiang@hushijie.com.cn
+ * @author 王强 Email : eric3510@foxmail.com
  * @version 创建时间：2017/12/5
  * TimerConfig 定时任务轮配置
  */

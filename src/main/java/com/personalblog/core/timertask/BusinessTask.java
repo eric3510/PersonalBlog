@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Map;
 
 /***
- * @author 王强 Email : wangqiang@hushijie.com.cn
+ * @author 王强 Email : eric3510@foxmail.com
  * @version 创建时间：2017/12/6
  * BusinessTask
  */

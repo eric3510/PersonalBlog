@@ -4,7 +4,7 @@ package com.personalblog.core.utils;
 import java.math.BigDecimal;
 
 /***
- * @author 王强 Email : wangqiang@hushijie.com.cn
+ * @author 王强 Email : eric3510@foxmail.com
  * @version 创建时间：2017/11/17
  * EricDemo
  */

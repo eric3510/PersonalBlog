@@ -1,7 +1,7 @@
 package com.personalblog.core.constant;
 
 /***
- * @author 王强 Email : wangqiang@hushijie.com.cn
+ * @author 王强 Email : eric3510@foxmail.com
  * @version 创建时间：2018/3/12
  * Constant
  */

@@ -1,7 +1,7 @@
 package com.personalblog.core.utils;
 
 /**
- * @author 王强 wangqiang@hushijie.com.cn
+ * @author 王强 eric3510@foxmail.com
  * @version 创建时间：2017/08/01 13:50
  * BusinessException
  **/

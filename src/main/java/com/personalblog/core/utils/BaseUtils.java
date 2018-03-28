@@ -27,7 +27,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author 王强 wangqiang@hushijie.com.cn
+ * @author 王强 eric3510@foxmail.com
  * @version 创建时间：2017/07/27 15:04
  * 工具类
  **/
@@ -2381,7 +2381,7 @@ public final class BaseUtils{
     }
 
     /**
-     * @author 王强 wangqiang@hushijie.com.cn
+     * @author 王强 eric3510@foxmail.com
      * @version 创建时间：2017/08/11 11:16
      * RegularlyCheckUtils
      **/
