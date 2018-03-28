@@ -1,4 +1,4 @@
-package com.personalblog.core.pojo;
+package com.core.pojo;
 
 /***
  * @author 王强 Email : eric3510@foxmail.com

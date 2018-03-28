@@ -1,8 +1,4 @@
-package com.personalblog.core.service;
-
-import com.personalblog.core.pojo.PagingVO;
-
-import java.util.List;
+package com.core.service;
 
 
 /**

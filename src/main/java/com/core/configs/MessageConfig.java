@@ -1,4 +1,4 @@
-package com.personalblog.core.configs;
+package com.core.configs;
 
 /***
  * @author 王强 Email : eric3510@foxmail.com

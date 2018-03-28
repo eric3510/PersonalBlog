@@ -1,18 +1,8 @@
-package com.personalblog.core.service.impl;
+package com.core.service.impl;
 
-import com.personalblog.core.configs.TimerConfig;
-import com.personalblog.core.service.TimerService;
-import com.personalblog.core.timertask.BusinessTask;
-import com.personalblog.core.timertask.DateToX;
-import com.personalblog.core.timertask.MessageUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-import javax.annotation.Resource;
-import java.util.Map;
 
 /**
  * @author eric E-mail:

@@ -1,4 +1,4 @@
-package com.personalblog.core.mysql;
+package com.core.mysql;
 
 import lombok.Data;
 

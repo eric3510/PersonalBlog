@@ -1,8 +1,8 @@
-package com.personalblog.core.service;
+package com.core.service;
 
 
-import com.personalblog.core.pojo.PagingVO;
-import com.personalblog.core.pojo.TreeVO;
+import com.core.pojo.PagingVO;
+import com.core.pojo.TreeVO;
 
 import java.util.List;
 import java.util.Map;

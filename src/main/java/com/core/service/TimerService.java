@@ -1,6 +1,6 @@
-package com.personalblog.core.service;
+package com.core.service;
 
-import com.personalblog.core.timertask.DateToX;
+import com.core.timertask.DateToX;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Map;

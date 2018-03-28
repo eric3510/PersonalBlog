@@ -1,6 +1,5 @@
-package com.personalblog.core.pojo;
+package com.core.pojo;
 
-import com.alibaba.fastjson.JSONObject;
 import lombok.Data;
 
 import java.lang.reflect.Field;

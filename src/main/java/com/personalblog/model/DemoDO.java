@@ -1,6 +1,6 @@
 package com.personalblog.model;
 
-import com.personalblog.core.annotation.TableName;
+import com.core.annotation.TableName;
 import lombok.Data;
 
 /***

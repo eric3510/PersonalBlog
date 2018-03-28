@@ -1,4 +1,4 @@
-package com.personalblog.core.mysql;
+package com.core.mysql;
 
 public class SqlUtils{
     protected static String getOperatingFirst(String sql){

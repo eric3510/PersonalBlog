@@ -1,6 +1,6 @@
-package com.personalblog.core.pojo;
+package com.core.pojo;
 
-import com.personalblog.core.annotation.TableName;
+import com.core.annotation.TableName;
 import lombok.Data;
 
 @Data

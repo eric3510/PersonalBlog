@@ -1,4 +1,4 @@
-package com.personalblog.core.utils;
+package com.core.utils;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;

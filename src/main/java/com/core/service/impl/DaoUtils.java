@@ -1,7 +1,7 @@
-package com.personalblog.core.service.impl;
+package com.core.service.impl;
 
-import com.personalblog.core.annotation.TableName;
-import com.personalblog.core.utils.BaseUtils;
+import com.core.utils.BaseUtils;
+import com.core.annotation.TableName;
 
 public class DaoUtils{
     private static final String UNDERLINE_T = "_";

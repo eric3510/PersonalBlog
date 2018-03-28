@@ -1,9 +1,9 @@
-package com.personalblog.core.service.impl;
+package com.core.service.impl;
 
-import com.personalblog.core.service.BaseService;
-import com.personalblog.core.service.DaoMongoService;
-import com.personalblog.core.service.DaoMysqlService;
-import com.personalblog.core.service.TimerService;
+import com.core.service.BaseService;
+import com.core.service.DaoMongoService;
+import com.core.service.DaoMysqlService;
+import com.core.service.TimerService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

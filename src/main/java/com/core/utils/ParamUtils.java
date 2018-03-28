@@ -1,9 +1,9 @@
-package com.personalblog.core.utils;
+package com.core.utils;
 
 
-import com.personalblog.core.annotation.ApiModelProperty;
-import com.personalblog.core.constant.Constant;
-import com.personalblog.core.pojo.BaseDTO;
+import com.core.constant.Constant;
+import com.core.annotation.ApiModelProperty;
+import com.core.pojo.BaseDTO;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;

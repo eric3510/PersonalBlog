@@ -1,9 +1,9 @@
-package com.personalblog.core.pojo;
+package com.core.pojo;
 
-import com.personalblog.core.annotation.FieldName;
-import com.personalblog.core.annotation.TableName;
-import com.personalblog.core.annotation.TreeLevel;
-import com.personalblog.core.annotation.TreeParentId;
+import com.core.annotation.TreeLevel;
+import com.core.annotation.TreeParentId;
+import com.core.annotation.FieldName;
+import com.core.annotation.TableName;
 import lombok.Data;
 
 /**

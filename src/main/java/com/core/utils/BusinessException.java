@@ -1,4 +1,4 @@
-package com.personalblog.core.utils;
+package com.core.utils;
 
 /**
  * @author 王强 eric3510@foxmail.com

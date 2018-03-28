@@ -1,6 +1,6 @@
-package com.personalblog.core.mysql;
+package com.core.mysql;
 
-import com.personalblog.core.annotation.MybatisMapperMysql;
+import com.core.annotation.MybatisMapperMysql;
 
 import java.util.List;
 import java.util.Map;

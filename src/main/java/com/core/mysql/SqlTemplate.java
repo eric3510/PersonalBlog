@@ -1,6 +1,6 @@
-package com.personalblog.core.mysql;
+package com.core.mysql;
 
-import com.personalblog.core.sort.ISortOrder;
+import com.core.sort.ISortOrder;
 import lombok.Data;
 
 import java.util.List;

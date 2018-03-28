@@ -1,4 +1,4 @@
-package com.personalblog.core.init;
+package com.core.init;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

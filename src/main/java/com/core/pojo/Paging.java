@@ -1,7 +1,7 @@
-package com.personalblog.core.pojo;
+package com.core.pojo;
 
-import com.personalblog.core.annotation.ApiModelProperty;
-import com.personalblog.core.annotation.Ignore;
+import com.core.annotation.ApiModelProperty;
+import com.core.annotation.Ignore;
 import lombok.Data;
 
 /**

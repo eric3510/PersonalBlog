@@ -1,4 +1,4 @@
-package com.personalblog.core.timertask;
+package com.core.timertask;
 
 import com.alibaba.fastjson.JSONObject;
 

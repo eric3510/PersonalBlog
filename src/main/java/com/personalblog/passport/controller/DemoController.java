@@ -1,8 +1,7 @@
 package com.personalblog.passport.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.personalblog.core.service.DaoMysqlService;
-import com.personalblog.core.service.impl.DaoMysqlServiceImpl;
+import com.core.service.impl.DaoMysqlServiceImpl;
 import com.personalblog.model.DemoDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

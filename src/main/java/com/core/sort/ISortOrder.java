@@ -1,4 +1,4 @@
-package com.personalblog.core.sort;
+package com.core.sort;
 
 /**
  * 结果集排列方式接口

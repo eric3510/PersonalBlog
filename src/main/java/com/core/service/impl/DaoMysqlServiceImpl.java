@@ -1,12 +1,12 @@
-package com.personalblog.core.service.impl;
+package com.core.service.impl;
 
-import com.personalblog.core.annotation.*;
-import com.personalblog.core.mysql.BaseMapper;
-import com.personalblog.core.mysql.SaveResult;
-import com.personalblog.core.mysql.SqlTemplate;
-import com.personalblog.core.pojo.*;
-import com.personalblog.core.service.DaoMysqlService;
-import com.personalblog.core.utils.BaseUtils;
+import com.core.annotation.*;
+import com.core.mysql.SaveResult;
+import com.core.pojo.*;
+import com.core.mysql.BaseMapper;
+import com.core.mysql.SqlTemplate;
+import com.core.service.DaoMysqlService;
+import com.core.utils.BaseUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

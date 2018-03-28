@@ -1,12 +1,7 @@
-package com.personalblog.core.service.impl;
+package com.core.service.impl;
 
-import com.personalblog.core.pojo.PagingVO;
-import com.personalblog.core.service.DaoMongoService;
+import com.core.service.DaoMongoService;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
-import javax.management.Query;
-import java.util.List;
 
 /**
  * @author 王强

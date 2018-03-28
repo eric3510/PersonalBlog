@@ -1,4 +1,4 @@
-package com.personalblog.core.sort;
+package com.core.sort;
 
 /**
  * ISortOrder抽象实现

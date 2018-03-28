@@ -1,4 +1,4 @@
-package com.personalblog.core.service;
+package com.core.service;
 
 /**
  * @author 王强

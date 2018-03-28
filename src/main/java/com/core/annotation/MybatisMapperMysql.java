@@ -1,4 +1,4 @@
-package com.personalblog.core.annotation;
+package com.core.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
