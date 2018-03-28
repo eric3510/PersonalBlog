@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.core.mysql.BaseMapper">
-    <select id="listByKeys" parameterType="com.core.mysql.SqlTemplate" resultType="java.util.Map">
+<mapper namespace="com.personalblog.core.mysql.BaseMapper">
+    <select id="listByKeys" parameterType="com.personalblog.core.mysql.SqlTemplate" resultType="java.util.Map">
         SELECT * FROM ${tableName} WHERE ${object} IN
         <foreach collection="objectList" item="object" index="index" open="(" close=")" separator=",">
             #{object}
         </foreach>
     </select>
-    <insert id="saveBatch" keyColumn="id" keyProperty="id" parameterType="com.core.mysql.SqlTemplate" useGeneratedKeys="true">
+    <insert id="saveBatch" keyColumn="id" keyProperty="id" parameterType="com.personalblog.core.mysql.SqlTemplate" useGeneratedKeys="true">
         INSERT INTO ${tableName}
             <foreach collection="saveFieldNames" item="saveFieldName" index="index" open="(" close=")" separator=",">
                 `${saveFieldName}`
@@ -20,11 +20,11 @@
             </foreach>
     </insert>
 
-    <select id="select" parameterType="com.core.mysql.SqlTemplate" resultType="java.util.Map">
+    <select id="select" parameterType="com.personalblog.core.mysql.SqlTemplate" resultType="java.util.Map">
         ${sql}
     </select>
 
-    <select id="selectByBaseDO" parameterType="com.core.mysql.SqlTemplate" resultType="java.util.Map">
+    <select id="selectByBaseDO" parameterType="com.personalblog.core.mysql.SqlTemplate" resultType="java.util.Map">
         SELECT * FROM ${tableName} WHERE
         <trim prefixOverrides="and">
             <foreach collection="listMap" item="paramMap" >
@@ -33,7 +33,7 @@
         </trim>
     </select>
 
-    <!--<select id="count" parameterType="com.icu.core.dao.mysql.SqlTemplate" resultType="java.lang.Integer">-->
+    <!--<select id="count" parameterType="com.icu.core.book.mysql.SqlTemplate" resultType="java.lang.Integer">-->
        <!--SELECT count(1) FROM ${tableName} WHERE-->
         <!--<trim prefixOverrides="and">-->
             <!--<foreach collection="listMap" item="paramMap">-->
@@ -41,16 +41,16 @@
             <!--</foreach>-->
         <!--</trim>-->
     <!--</select>-->
-    <select id="count" parameterType="com.core.mysql.SqlTemplate" resultType="java.lang.Integer">
+    <select id="count" parameterType="com.personalblog.core.mysql.SqlTemplate" resultType="java.lang.Integer">
         ${sql}
     </select>
 
 
-    <update id="update" keyColumn="id" parameterType="com.core.mysql.SqlTemplate">
+    <update id="update" keyColumn="id" parameterType="com.personalblog.core.mysql.SqlTemplate">
         ${sql}
     </update>
 
-    <delete id="remove" parameterType="com.core.mysql.SqlTemplate">
+    <delete id="remove" parameterType="com.personalblog.core.mysql.SqlTemplate">
         ${sql}
     </delete>
 </mapper>
