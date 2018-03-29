@@ -3,7 +3,6 @@ package com.personalblog.core.service.impl;
 import com.personalblog.core.service.BaseService;
 import com.personalblog.core.service.DaoMongoService;
 import com.personalblog.core.service.DaoMysqlService;
-import com.personalblog.core.service.TimerService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -20,9 +19,6 @@ public class BaseServiceImpl implements BaseService{
     private DaoMysqlService daoMysqlService;
 
     @Resource
-    private TimerService timerService;
-
-    @Resource
     private DaoMongoService daoMongoService;
 
     public DaoMysqlService getDao(){
@@ -32,10 +28,4 @@ public class BaseServiceImpl implements BaseService{
     public DaoMongoService getDaoMongo(){
         return this.daoMongoService;
     }
-
-    public TimerService getTimer(){
-        return this.timerService;
-    }
-
-
 }
