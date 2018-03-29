@@ -114,10 +114,9 @@ public class DaoMysqlServiceImpl implements DaoMysqlService{
      * @param <T> 泛型 返回类型
      * @return return
      */
-    public <T> List<T> listByIds(Class<T> type, List<?> ids, String tableName){
+    public <T> List<T> listByIds(Class<T> type, List<String> ids, String tableName){
         return this.listByKeys(type, DaoMysqlServiceImpl.ID_T, ids, tableName);
     }
-
 
     /***
      * 根据多个id字段查询多个对象
@@ -127,12 +126,12 @@ public class DaoMysqlServiceImpl implements DaoMysqlService{
      * @param <T> 泛型 返回类型
      * @return return
      */
-    public <T> T getById(Class<T> type, Object id, String tableName){
+    public <T> T getById(Class<T> type, String id, String tableName){
         return this.getByKey(type, DaoMysqlServiceImpl.ID_T, id, tableName);
     }
 
     @Override
-    public <T> T getById(Class<T> type, Object id){
+    public <T> T getById(Class<T> type, String id){
         String tableName = type.getAnnotation(TableName.class).value();
         return this.getById(type, id, tableName);
     }
@@ -286,36 +285,6 @@ public class DaoMysqlServiceImpl implements DaoMysqlService{
         pagingVO.setList(list);
         pagingVO.setCurrentPage(toPage);
         pagingVO.setPageTotal((total % pageSize) > 0 ? total / pageSize + 1 : total / pageSize);
-        pagingVO.setTotal(total);
-        return pagingVO;
-    }
-
-    // TODO: 2018/2/2 存在重复代码,需要重构.
-    @Override
-    public <T> PagingVO<T> listPagingOffset(Class<T> type, Integer toPage, Integer pageSize, Integer offset, String sql, Map<String, Object> param){
-        String selectT = "SELECT";
-        String fromT = "FROM";
-        if(toPage == null){
-            toPage = 1;
-        }
-        if(pageSize == null){
-            pageSize = 10000;
-        }
-        if(offset == null || offset < 0){
-            offset = 0;
-        }
-        int total = this.count(selectT + " COUNT(*) " + sql.substring(sql.indexOf(fromT), sql.length()), param);
-        if(toPage <= 1){
-            sql = sql + " LIMIT " + 0 + "," + (offset > 0 ? offset : pageSize);
-        }else{
-            sql = sql + " LIMIT " + ((toPage - 2) * pageSize + offset) + "," + pageSize;
-        }
-        List<T> list = this.list(type, sql, param);
-        PagingVO<T> pagingVO = new PagingVO<>();
-        pagingVO.setList(list);
-        pagingVO.setCurrentPage(toPage);
-        int count = total - offset;
-        pagingVO.setPageTotal((count % pageSize) > 0 ? count / pageSize + 2 : count / pageSize + 1);
         pagingVO.setTotal(total);
         return pagingVO;
     }
@@ -586,7 +555,7 @@ public class DaoMysqlServiceImpl implements DaoMysqlService{
      * @param tableName 表名
      * @return return
      */
-    public int updateByIds(List<?> ids, Map<String, Object> updateSet, String tableName){
+    public int updateByIds(List<String> ids, Map<String, Object> updateSet, String tableName){
         return this.updateByKeys(ids, "id", updateSet, tableName);
     }
 
@@ -597,8 +566,8 @@ public class DaoMysqlServiceImpl implements DaoMysqlService{
      * @param tableName 表名
      * @return 影响行数
      */
-    public int updateById(Object id, Map<String, Object> updateSet, String tableName){
-        List<Object> idList = new ArrayList<>();
+    public int updateById(String id, Map<String, Object> updateSet, String tableName){
+        List<String> idList = new ArrayList<>();
         idList.add(id);
         return this.updateByIds(idList, updateSet, tableName);
     }
@@ -631,7 +600,7 @@ public class DaoMysqlServiceImpl implements DaoMysqlService{
         resultMap.remove("id");
         this.removeNullField(resultMap);
         this.fieldListToMap(updateSet, resultMap);
-        return this.updateById(id, resultMap, tableNameAnno.value());
+        return this.updateById((String) id, resultMap, tableNameAnno.value());
     }
 
     /***
@@ -735,7 +704,7 @@ public class DaoMysqlServiceImpl implements DaoMysqlService{
      * @param tableName 表名
      * @return 影响行数
      */
-    public int removeByIds(List<?> idList, String tableName){
+    public int removeByIds(List<String> idList, String tableName){
         return this.removeByKeys(idList, "id", tableName);
     }
 
@@ -745,8 +714,8 @@ public class DaoMysqlServiceImpl implements DaoMysqlService{
      * @param tableName 表名
      * @return 影响行数
      */
-    public int removeById(Object id, String tableName){
-        List<Object> idList = new ArrayList<>();
+    public int removeById(String id, String tableName){
+        List<String> idList = new ArrayList<>();
         idList.add(id);
         return this.removeByIds(idList, tableName);
     }

@@ -22,7 +22,7 @@ public class DemoController{
     public String home(){
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("name", "hello world");
-        DemoDO demoDO = daoMysqlService.getById(DemoDO.class, 123);
+        DemoDO demoDO = daoMysqlService.getById(DemoDO.class, "123");
         return JSONObject.toJSONString(demoDO);
     }
 }

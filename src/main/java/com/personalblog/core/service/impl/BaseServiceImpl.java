@@ -3,6 +3,7 @@ package com.personalblog.core.service.impl;
 import com.personalblog.core.service.BaseService;
 import com.personalblog.core.service.DaoMongoService;
 import com.personalblog.core.service.DaoMysqlService;
+import com.personalblog.core.service.UniqueSequenceServiceService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -21,11 +22,18 @@ public class BaseServiceImpl implements BaseService{
     @Resource
     private DaoMongoService daoMongoService;
 
+    @Resource
+    private UniqueSequenceServiceService uniqueSequenceServiceService;
+
     public DaoMysqlService getDao(){
         return daoMysqlService;
     }
 
     public DaoMongoService getDaoMongo(){
         return this.daoMongoService;
+    }
+
+    public UniqueSequenceServiceService getUniqueSequenceServiceService(){
+        return uniqueSequenceServiceService;
     }
 }

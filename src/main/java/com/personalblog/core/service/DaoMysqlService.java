@@ -73,7 +73,7 @@ public interface DaoMysqlService{
      * @param <T> 泛型 返回类型
      * @return return
      */
-    <T> List<T> listByIds(Class<T> type, List<?> ids, String tableName);
+    <T> List<T> listByIds(Class<T> type, List<String> ids, String tableName);
 
 
     /***
@@ -97,19 +97,6 @@ public interface DaoMysqlService{
      * @return 带有分页信息的POJO
      */
     <T> PagingVO<T> listPaging(Class<T> type, Integer toPage, Integer pageSize, String sql, Map<String, Object> param);
-
-    /**
-     * 分页偏移查询
-     *
-     * @param type     返回类型（必须继承VO）
-     * @param toPage   所跳页
-     * @param pageSize 每页条数
-     * @param offset   向后偏移量 大于0
-     * @param sql      sql
-     * @param param    查询参数
-     * @return 带有分页信息的POJO
-     */
-    <T> PagingVO<T> listPagingOffset(Class<T> type, Integer toPage, Integer pageSize, Integer offset, String sql, Map<String, Object> param);
 
     /***
      * 单表分页查询
@@ -139,9 +126,9 @@ public interface DaoMysqlService{
      * @param <T> 泛型 返回类型
      * @return return
      */
-    <T> T getById(Class<T> type, Object id, String tableName);
+    <T> T getById(Class<T> type, String id, String tableName);
 
-    <T> T getById(Class<T> type, Object id);
+    <T> T getById(Class<T> type, String id);
 
     /***
      * 批量添加
@@ -172,7 +159,7 @@ public interface DaoMysqlService{
      * @param tableName 表名
      * @return return
      */
-    int updateByIds(List<?> idList, Map<String, Object> updateSet, String tableName);
+    int updateByIds(List<String> idList, Map<String, Object> updateSet, String tableName);
 
 
     /***
@@ -182,7 +169,7 @@ public interface DaoMysqlService{
      * @param tableName 表名
      * @return 影响行数
      */
-    int updateById(Object id, Map<String, Object> updateSet, String tableName);
+    int updateById(String id, Map<String, Object> updateSet, String tableName);
 
     /***
      *
@@ -232,7 +219,7 @@ public interface DaoMysqlService{
      * @param tableName 表名
      * @return 影响行数
      */
-    int removeByIds(List<?> idList, String tableName);
+    int removeByIds(List<String> idList, String tableName);
 
     /***
      * 根据主键id删除一条记录
@@ -240,7 +227,7 @@ public interface DaoMysqlService{
      * @param tableName 表名
      * @return 影响行数
      */
-    int removeById(Object id, String tableName);
+    int removeById(String id, String tableName);
 
     /***
      * 根据一个字段值的队列批量修改
