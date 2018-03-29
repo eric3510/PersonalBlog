@@ -1,6 +1,7 @@
 package com.personalblog.passport.model;
 
 import com.personalblog.core.annotation.TableName;
+import com.personalblog.core.pojo.BaseDO;
 import lombok.Data;
 
 /***
@@ -10,7 +11,7 @@ import lombok.Data;
  */
 @Data
 @TableName("demo")
-public class DemoDO{
-    private Long id;
+public class DemoDO extends BaseDO{
+    private String id;
     private String name;
 }

@@ -1,6 +1,5 @@
 package com.personalblog.core.mysql;
 
-import com.personalblog.core.sort.ISortOrder;
 import lombok.Data;
 
 import java.util.List;
@@ -74,9 +73,4 @@ public class SqlTemplate{
      * key value 键值对对象
      */
     private KeyValueTemplate keyValueTemplate;
-
-    /**
-     * 排序对象
-     */
-    private ISortOrder sortOrder;
 }

@@ -2,6 +2,7 @@ package com.personalblog.passport.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.personalblog.core.service.DaoMysqlService;
+import com.personalblog.core.service.UniqueSequenceServiceService;
 import com.personalblog.core.service.impl.DaoMysqlServiceImpl;
 import com.personalblog.passport.model.DemoDO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +19,18 @@ public class DemoController{
     @Autowired
     DaoMysqlService daoMysqlService;
 
+    @Autowired
+    UniqueSequenceServiceService uniqueSequenceServiceService;
+
     @RequestMapping("/")
     public String home(){
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("name", "hello world");
-        DemoDO demoDO = daoMysqlService.getById(DemoDO.class, "123");
-        return JSONObject.toJSONString(demoDO);
+        DemoDO demoDO = new DemoDO();
+        demoDO.setName("张三");
+        demoDO.setId(uniqueSequenceServiceService.getUUID());
+        daoMysqlService.save(demoDO);
+        DemoDO param = new DemoDO();
+        return JSONObject.toJSONString(daoMysqlService.list(DemoDO.class, param));
     }
 }
