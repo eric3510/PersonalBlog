@@ -1,8 +1,5 @@
 package com.personalblog.core.mysql;
 
-import com.personalblog.core.annotation.MybatisMapperMysql;
-import org.apache.ibatis.annotations.Mapper;
-
 import java.util.List;
 import java.util.Map;
 
@@ -11,8 +8,6 @@ import java.util.Map;
  * @version 创建时间：2017/08/16 14:34
  *          BaseMapper
  **/
-@MybatisMapperMysql
-@Mapper
 public interface BaseMapper{
     List<Map<String, Object>> listByKeys(SqlTemplate SqlTemplate);
 
