@@ -23,7 +23,7 @@ import java.util.*;
  * @version 创建时间：2017/08/18 10:30
  * DaoMysqlServiceImpl
  **/
-@Service("DaoMysqlService")
+@Service
 public class DaoMysqlServiceImpl implements DaoMysqlService{
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
