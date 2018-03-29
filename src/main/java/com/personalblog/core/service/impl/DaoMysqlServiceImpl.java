@@ -467,28 +467,6 @@ public class DaoMysqlServiceImpl implements DaoMysqlService{
         return this.getResultList(list, type);
     }
 
-    /**
-     * 根据DO数据对象 查询对象列表
-     *
-     * @param type   返回类型
-     * @param baseDO 数据对象
-     * @param <T>    泛型 T
-     * @return return return
-     */
-    public <T> List<T> selectByBaseDO(Class<T> type, BaseDO baseDO){
-        SqlTemplate sqlTemplate = new SqlTemplate();
-        String tableName = DaoMysqlServiceImpl.getTableName(baseDO);
-        sqlTemplate.setTableName(tableName);
-        List<Map<String, Object>> query = getQueryCondition(baseDO);
-        sqlTemplate.setListMap(query);
-
-        List<Map<String, Object>> list = baseMapper.selectByBaseDO(sqlTemplate);
-        if(list == null){
-            return null;
-        }
-        return this.buildResultList(type, list);
-    }
-
     /***
      * 批量添加
      * @param list 将要添加到数据库中的集合
