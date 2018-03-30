@@ -1,0 +1,223 @@
+2018-03-30 16:59:49,602 INFO (Jdk14Logger.java:87)- Starting PersonalBlogApplication on EricdeMac-mini.local with PID 36058 (/Users/eric/project/personal-blog/out/production/classes started by eric in /Users/eric/project/personal-blog)
+2018-03-30 16:59:49,609 DEBUG (Jdk14Logger.java:87)- Running with Spring Boot v2.0.0.RELEASE, Spring v5.0.4.RELEASE
+2018-03-30 16:59:49,610 INFO (Jdk14Logger.java:87)- No active profile set, falling back to default profiles: default
+2018-03-30 16:59:54,444 DEBUG (HikariConfig.java:495)- Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader sun.misc.Launcher$AppClassLoader@18b4aac2
+2018-03-30 16:59:57,003 INFO (Jdk14Logger.java:87)- Started PersonalBlogApplication in 9.048 seconds (JVM running for 9.851)
+2018-03-30 17:00:32,138 INFO (DemoController.java:31)- demo
+2018-03-30 17:00:32,448 DEBUG (HikariConfig.java:1119)- HikariPool-1 - configuration:
+2018-03-30 17:00:32,453 DEBUG (HikariConfig.java:1151)- allowPoolSuspension.............false
+2018-03-30 17:00:32,454 DEBUG (HikariConfig.java:1151)- autoCommit......................true
+2018-03-30 17:00:32,456 DEBUG (HikariConfig.java:1151)- catalog.........................none
+2018-03-30 17:00:32,457 DEBUG (HikariConfig.java:1151)- connectionInitSql...............none
+2018-03-30 17:00:32,457 DEBUG (HikariConfig.java:1151)- connectionTestQuery.............none
+2018-03-30 17:00:32,458 DEBUG (HikariConfig.java:1151)- connectionTimeout...............30000
+2018-03-30 17:00:32,458 DEBUG (HikariConfig.java:1151)- dataSource......................none
+2018-03-30 17:00:32,459 DEBUG (HikariConfig.java:1151)- dataSourceClassName.............none
+2018-03-30 17:00:32,459 DEBUG (HikariConfig.java:1151)- dataSourceJNDI..................none
+2018-03-30 17:00:32,461 DEBUG (HikariConfig.java:1151)- dataSourceProperties............{password=<masked>}
+2018-03-30 17:00:32,462 DEBUG (HikariConfig.java:1151)- driverClassName................."com.mysql.cj.jdbc.Driver"
+2018-03-30 17:00:32,463 DEBUG (HikariConfig.java:1151)- healthCheckProperties...........{}
+2018-03-30 17:00:32,463 DEBUG (HikariConfig.java:1151)- healthCheckRegistry.............none
+2018-03-30 17:00:32,465 DEBUG (HikariConfig.java:1151)- idleTimeout.....................600000
+2018-03-30 17:00:32,466 DEBUG (HikariConfig.java:1151)- initializationFailFast..........true
+2018-03-30 17:00:32,467 DEBUG (HikariConfig.java:1151)- initializationFailTimeout.......1
+2018-03-30 17:00:32,468 DEBUG (HikariConfig.java:1151)- isolateInternalQueries..........false
+2018-03-30 17:00:32,469 DEBUG (HikariConfig.java:1151)- jdbc4ConnectionTest.............false
+2018-03-30 17:00:32,470 DEBUG (HikariConfig.java:1151)- jdbcUrl.........................jdbc:mysql://59.110.216.161:3306/test?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&useSSL=true
+2018-03-30 17:00:32,471 DEBUG (HikariConfig.java:1151)- leakDetectionThreshold..........0
+2018-03-30 17:00:32,472 DEBUG (HikariConfig.java:1151)- maxLifetime.....................1800000
+2018-03-30 17:00:32,472 DEBUG (HikariConfig.java:1151)- maximumPoolSize.................10
+2018-03-30 17:00:32,473 DEBUG (HikariConfig.java:1151)- metricRegistry..................none
+2018-03-30 17:00:32,473 DEBUG (HikariConfig.java:1151)- metricsTrackerFactory...........none
+2018-03-30 17:00:32,474 DEBUG (HikariConfig.java:1151)- minimumIdle.....................10
+2018-03-30 17:00:32,474 DEBUG (HikariConfig.java:1151)- password........................<masked>
+2018-03-30 17:00:32,475 DEBUG (HikariConfig.java:1151)- poolName........................"HikariPool-1"
+2018-03-30 17:00:32,476 DEBUG (HikariConfig.java:1151)- readOnly........................false
+2018-03-30 17:00:32,477 DEBUG (HikariConfig.java:1151)- registerMbeans..................false
+2018-03-30 17:00:32,477 DEBUG (HikariConfig.java:1151)- scheduledExecutor...............none
+2018-03-30 17:00:32,479 DEBUG (HikariConfig.java:1151)- scheduledExecutorService........internal
+2018-03-30 17:00:32,479 DEBUG (HikariConfig.java:1151)- schema..........................none
+2018-03-30 17:00:32,480 DEBUG (HikariConfig.java:1151)- threadFactory...................internal
+2018-03-30 17:00:32,480 DEBUG (HikariConfig.java:1151)- transactionIsolation............default
+2018-03-30 17:00:32,481 DEBUG (HikariConfig.java:1151)- username........................"root"
+2018-03-30 17:00:32,481 DEBUG (HikariConfig.java:1151)- validationTimeout...............5000
+2018-03-30 17:00:32,482 INFO (HikariDataSource.java:110)- HikariPool-1 - Starting...
+2018-03-30 17:00:33,011 DEBUG (HikariPool.java:538)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6be0fe1f
+2018-03-30 17:00:33,015 INFO (HikariDataSource.java:123)- HikariPool-1 - Start completed.
+2018-03-30 17:00:33,028 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: INSERT INTO demo ( `id` , `name` ) VALUES ( ? , ? ) 
+2018-03-30 17:00:33,063 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 10abc4a6f58d4a90a5edaa1d1411f253(String), 张三(String)
+2018-03-30 17:00:33,079 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2018-03-30 17:00:33,101 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT * FROM demo WHERE 1 = 1 
+2018-03-30 17:00:33,103 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2018-03-30 17:00:33,120 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=1, active=1, idle=0, waiting=0)
+2018-03-30 17:00:33,226 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ff10c43
+2018-03-30 17:00:33,244 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 33
+2018-03-30 17:00:33,358 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@fdef30c
+2018-03-30 17:00:33,461 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b908863
+2018-03-30 17:00:33,543 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5c75649f
+2018-03-30 17:00:33,616 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2645145c
+2018-03-30 17:00:33,683 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@30db7eb9
+2018-03-30 17:00:33,762 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1a9479c0
+2018-03-30 17:00:33,836 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@27b617c4
+2018-03-30 17:00:33,922 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@698a2bb1
+2018-03-30 17:00:33,923 DEBUG (HikariPool.java:404)- HikariPool-1 - After adding stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:01:03,126 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:01:33,131 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:02:03,133 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:02:33,139 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:03:03,144 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:03:33,150 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:04:03,166 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:04:33,172 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:05:03,178 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:05:33,181 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:06:03,186 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:06:33,191 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:07:03,196 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:07:33,198 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:08:03,204 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:08:33,207 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:09:03,213 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:09:33,220 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:10:03,226 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:10:33,231 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:11:03,237 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:11:33,242 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:12:03,248 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:12:33,252 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:13:03,257 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:13:33,261 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:14:03,264 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:14:33,269 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:15:03,275 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:15:33,277 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:16:03,283 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:16:33,286 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:17:03,290 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:17:33,295 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:18:03,300 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:18:33,305 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:19:03,309 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:19:33,315 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:20:03,320 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:20:33,326 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:21:03,330 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:21:33,336 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:22:03,341 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:22:33,345 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:23:03,351 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:23:33,355 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:24:03,360 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:24:33,365 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:25:03,369 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:25:33,375 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:26:03,378 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:26:33,384 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:27:03,389 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:27:33,394 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:28:03,398 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:28:33,404 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:29:03,408 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:29:33,412 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:29:52,801 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@6ff10c43: (connection has passed maxLifetime)
+2018-03-30 17:29:52,890 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@19272beb
+2018-03-30 17:29:57,079 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@5c75649f: (connection has passed maxLifetime)
+2018-03-30 17:29:57,137 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7908d4a4
+2018-03-30 17:29:58,679 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@b908863: (connection has passed maxLifetime)
+2018-03-30 17:29:58,760 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d46c91d
+2018-03-30 17:30:00,200 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@fdef30c: (connection has passed maxLifetime)
+2018-03-30 17:30:00,275 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3eacbb15
+2018-03-30 17:30:03,417 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:30:06,044 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@27b617c4: (connection has passed maxLifetime)
+2018-03-30 17:30:06,125 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@222c7177
+2018-03-30 17:30:06,521 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@698a2bb1: (connection has passed maxLifetime)
+2018-03-30 17:30:06,584 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@779480dd
+2018-03-30 17:30:11,006 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@30db7eb9: (connection has passed maxLifetime)
+2018-03-30 17:30:11,101 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@249c420b
+2018-03-30 17:30:16,384 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@6be0fe1f: (connection has passed maxLifetime)
+2018-03-30 17:30:16,457 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@27459bf8
+2018-03-30 17:30:17,634 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@2645145c: (connection has passed maxLifetime)
+2018-03-30 17:30:17,710 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@476a64b7
+2018-03-30 17:30:23,395 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@1a9479c0: (connection has passed maxLifetime)
+2018-03-30 17:30:23,464 DEBUG (HikariPool.java:700)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2ffe095
+2018-03-30 17:30:33,420 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:31:03,426 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:31:33,432 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:32:03,438 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:32:33,443 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:33:03,448 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:33:33,460 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:34:02,250 INFO (DemoController.java:31)- demo
+2018-03-30 17:34:02,259 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: INSERT INTO demo ( `id` , `name` ) VALUES ( ? , ? ) 
+2018-03-30 17:34:02,261 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 4058baba5ead42b7868a3c1c4860aa0e(String), 张三(String)
+2018-03-30 17:34:02,278 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2018-03-30 17:34:02,280 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT * FROM demo WHERE 1 = 1 
+2018-03-30 17:34:02,280 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2018-03-30 17:34:02,290 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 34
+2018-03-30 17:34:03,483 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:34:03,737 INFO (DemoController.java:31)- demo
+2018-03-30 17:34:03,751 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: INSERT INTO demo ( `id` , `name` ) VALUES ( ? , ? ) 
+2018-03-30 17:34:03,752 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 7c6be229be4a4a8191861df7d213744e(String), 张三(String)
+2018-03-30 17:34:04,356 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2018-03-30 17:34:04,362 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT * FROM demo WHERE 1 = 1 
+2018-03-30 17:34:04,363 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2018-03-30 17:34:04,493 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 35
+2018-03-30 17:34:07,140 INFO (DemoController.java:31)- demo
+2018-03-30 17:34:07,175 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: INSERT INTO demo ( `id` , `name` ) VALUES ( ? , ? ) 
+2018-03-30 17:34:07,176 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 65d785eb22d84ac1b2f994d58a236fc9(String), 张三(String)
+2018-03-30 17:34:07,722 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2018-03-30 17:34:07,730 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT * FROM demo WHERE 1 = 1 
+2018-03-30 17:34:07,730 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2018-03-30 17:34:07,830 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 36
+2018-03-30 17:34:33,491 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:35:03,496 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:35:33,500 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:36:03,506 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:36:33,511 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:37:03,516 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:37:33,521 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:38:03,523 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:38:33,529 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:39:03,532 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:39:33,538 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:40:03,544 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:40:33,549 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:41:03,554 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:41:33,558 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:42:03,563 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:42:33,565 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:43:03,568 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:43:33,571 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:44:03,578 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:44:33,584 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:45:03,588 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:45:33,593 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:46:03,598 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:46:33,605 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:47:03,609 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:47:33,612 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:48:03,616 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:48:33,621 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:49:03,635 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:49:33,643 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:50:03,648 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:50:33,652 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:51:03,658 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:51:33,663 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:52:03,664 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:52:33,670 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:53:03,675 DEBUG (HikariPool.java:404)- HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:53:16,855 INFO (HikariDataSource.java:381)- HikariPool-1 - Shutdown initiated...
+2018-03-30 17:53:16,856 DEBUG (HikariPool.java:404)- HikariPool-1 - Before shutdown stats (total=10, active=0, idle=10, waiting=0)
+2018-03-30 17:53:16,863 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@19272beb: (connection evicted)
+2018-03-30 17:53:16,864 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@7908d4a4: (connection evicted)
+2018-03-30 17:53:16,866 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@7d46c91d: (connection evicted)
+2018-03-30 17:53:16,873 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@3eacbb15: (connection evicted)
+2018-03-30 17:53:16,875 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@222c7177: (connection evicted)
+2018-03-30 17:53:16,876 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@779480dd: (connection evicted)
+2018-03-30 17:53:16,878 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@249c420b: (connection evicted)
+2018-03-30 17:53:16,881 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@27459bf8: (connection evicted)
+2018-03-30 17:53:16,888 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@476a64b7: (connection evicted)
+2018-03-30 17:53:16,891 DEBUG (PoolBase.java:127)- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@2ffe095: (connection evicted)
+2018-03-30 17:53:16,894 DEBUG (HikariPool.java:404)- HikariPool-1 - After shutdown stats (total=0, active=0, idle=0, waiting=0)
+2018-03-30 17:53:16,895 INFO (HikariDataSource.java:383)- HikariPool-1 - Shutdown completed.
