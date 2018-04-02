@@ -22,7 +22,6 @@ repositories {
     mavenCentral()
 }
 
-
 dependencies {
     compile("org.projectlombok:lombok:1.12.6")
 	compile('org.apache.commons:commons-lang3:3.4')
