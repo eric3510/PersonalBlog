@@ -12,4 +12,5 @@ public class AnnotationDTO{
     private String treeLevelFieldName;
 
     private String treeParentIdFieldName;
+
 }
