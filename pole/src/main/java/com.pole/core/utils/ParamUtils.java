@@ -94,7 +94,7 @@ public class ParamUtils{
                     if(code != -1){
                         exceptionStr = "code = " + code + exceptionStr;
                         businessException = new BusinessException(exceptionStr);
-                        businessException.setRet(code);
+                        businessException.setCode(code);
                     }
                     throw businessException;
                 }

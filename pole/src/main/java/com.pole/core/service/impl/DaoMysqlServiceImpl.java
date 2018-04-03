@@ -373,7 +373,7 @@ public class DaoMysqlServiceImpl implements DaoMysqlService{
 
     public static void main(String[] args){
         DaoMysqlServiceImpl daoMysqlService = new DaoMysqlServiceImpl();
-        TreeDemoDO treeDemoDOTree = new TreeDemoDO(1L, "张三", 18, 0L, 0);
+        TreeDemoDO treeDemoDOTree = new TreeDemoDO("1", "张三", 18, 0L, 0);
         AnnotationDTO annotationDTO = new AnnotationDTO();
         annotationDTO.setTreeLevelFieldName("level");
         annotationDTO.setTreeParentIdFieldName("parentId");

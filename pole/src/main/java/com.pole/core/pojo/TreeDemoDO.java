@@ -15,10 +15,6 @@ import lombok.Data;
 @TableName("tree_demo")
 public class TreeDemoDO extends BaseDO{
     /***
-     * 主键
-     */
-    private Long id;
-    /***
      * 姓名
      */
     private String name;
@@ -40,8 +36,8 @@ public class TreeDemoDO extends BaseDO{
 
     public TreeDemoDO(){}
 
-    public TreeDemoDO(Long id, String name, Integer age, Long parentId, Integer level){
-        this.id = id;
+    public TreeDemoDO(String id, String name, Integer age, Long parentId, Integer level){
+        this.setId(id);
         this.name = name;
         this.age = age;
         this.parentId = parentId;

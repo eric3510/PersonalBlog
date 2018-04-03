@@ -7,6 +7,8 @@ import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.cglib.beans.BeanCopier;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -1706,6 +1708,7 @@ public final class BaseUtils{
 
         return result;
     }
+
     public static String urlEncode(String input){
         try{
             return URLEncoder.encode(input, "UTF-8");
@@ -1742,17 +1745,17 @@ public final class BaseUtils{
      * @param bytes
      * @return
      */
-    public static String bytesToHex(byte[] bytes) {
+    public static String bytesToHex(byte[] bytes){
         StringBuffer md5str = new StringBuffer();
         // 把数组每一字节换成16进制连成md5字符串
         int digital;
-        for (int i = 0; i < bytes.length; i++) {
+        for(int i = 0; i < bytes.length; i++){
             digital = bytes[i];
 
-            if (digital < 0) {
+            if(digital < 0){
                 digital += 256;
             }
-            if (digital < 16) {
+            if(digital < 16){
                 md5str.append("0");
             }
             md5str.append(Integer.toHexString(digital));
@@ -1955,10 +1958,10 @@ public final class BaseUtils{
                         key = UUID.randomUUID().toString();
                     }else{
                         Class c = object.getClass();
-                        Method keyMethod = c.getMethod(getT + BaseUtils.StringUtilsSon.firstLetterUpperCase(keyFieldName));
+                        Method keyMethod = c.getMethod(getT + StringUtilsSon.firstLetterUpperCase(keyFieldName));
                         key = keyMethod.invoke(object);
                         if(prefixFieldName != null){
-                            Method prefixMethod = c.getMethod(getT + BaseUtils.StringUtilsSon.firstLetterUpperCase(prefixFieldName));
+                            Method prefixMethod = c.getMethod(getT + StringUtilsSon.firstLetterUpperCase(prefixFieldName));
                             prefix = prefixMethod.invoke(object);
                         }
                     }
@@ -1990,7 +1993,7 @@ public final class BaseUtils{
                         key = UUID.randomUUID().toString();
                     }else{
                         Class c = object.getClass();
-                        Method keyMethod = c.getMethod(getT + BaseUtils.StringUtilsSon.firstLetterUpperCase(keyFieldName));
+                        Method keyMethod = c.getMethod(getT + StringUtilsSon.firstLetterUpperCase(keyFieldName));
                         key = keyMethod.invoke(object);
                     }
                     map.put(prefixFieldName == null ? key + "" : prefixFieldName + key, object);
@@ -2016,9 +2019,9 @@ public final class BaseUtils{
          */
         public static <T> T getListToValue(List<T> list, String key, Object value){
             String get = "get";
-            String methodName = get + BaseUtils.StringUtilsSon.firstLetterUpperCase(key);
+            String methodName = get + StringUtilsSon.firstLetterUpperCase(key);
             for(T t : list){
-                Object tValue = BaseUtils.ObjectUtils.invokeMethod(t, methodName);
+                Object tValue = ObjectUtils.invokeMethod(t, methodName);
                 if(value == null){
                     if(value == tValue){
                         return t;
@@ -2039,7 +2042,7 @@ public final class BaseUtils{
          * @param map  数据容器
          */
         public static void listToMap(List list, Map<String, Object> map){
-            BaseUtils.ListUtils.listToMap(list, map, null, null);
+            ListUtils.listToMap(list, map, null, null);
         }
 
         /**
@@ -2052,8 +2055,8 @@ public final class BaseUtils{
         public static <T> List<T> removeFileToValue(List<T> list, String fieldName, String value){
             List<T> removeList = new ArrayList<>();
             for(Object object : list){
-                String methodName = "get" + BaseUtils.StringUtilsSon.firstLetterUpperCase(fieldName);
-                String objValue = (String) BaseUtils.ObjectUtils.invokeMethod(object, methodName);
+                String methodName = "get" + StringUtilsSon.firstLetterUpperCase(fieldName);
+                String objValue = (String) ObjectUtils.invokeMethod(object, methodName);
                 if(value == null || "".equals(value)){
                     if(BaseUtils.isBlank(objValue)){
                         removeList.add((T) object);
@@ -2195,7 +2198,7 @@ public final class BaseUtils{
             int endInt = source.indexOf(end, index);
             if(endInt == -1)
                 return source;
-            return BaseUtils.StringUtilsSon.replaceRange(
+            return StringUtilsSon.replaceRange(
                     source.substring(0, startInt) + source.substring(startInt, endInt).replace(oldChar, newChar) + source.substring(endInt, source.length()),
                     oldChar,
                     newChar,
@@ -2215,7 +2218,7 @@ public final class BaseUtils{
          * @return
          */
         public static String replaceRange(String source, String oldChar, String newChar, String start, String end){
-            return BaseUtils.StringUtilsSon.replaceRange(source, oldChar, newChar, start, end, 0);
+            return StringUtilsSon.replaceRange(source, oldChar, newChar, start, end, 0);
         }
     }
 
@@ -2529,7 +2532,7 @@ public final class BaseUtils{
          */
         public static List<String> checkRegexToList(List<String> list, RegularlyEnum regularlyEnum, String errorTemplate){
             List<String> errorList = new ArrayList<>();
-            String errorMsg = BaseUtils.RegularlyUtils.getErrorMsgTemplate(errorTemplate);
+            String errorMsg = RegularlyUtils.getErrorMsgTemplate(errorTemplate);
             int i = 1;
             for(String str : list){
                 boolean checkResult = RegularlyUtils.checkRegex(str, regularlyEnum);
@@ -2548,7 +2551,7 @@ public final class BaseUtils{
          * @return 不符合正则的队列下标集合
          */
         public static List<String> checkRegexToList(List<String> list, RegularlyEnum regularlyEnum){
-            return BaseUtils.RegularlyUtils.checkRegexToList(list, regularlyEnum, null);
+            return RegularlyUtils.checkRegexToList(list, regularlyEnum, null);
         }
 
         /***
@@ -2579,7 +2582,7 @@ public final class BaseUtils{
             if(BaseUtils.isBlank(errorTemplate)){
                 return RegularlyUtils.ERROR_MSG;
             }else{
-                BaseUtils.RegularlyUtils.cacheErrorTemplate(errorTemplate);
+                RegularlyUtils.cacheErrorTemplate(errorTemplate);
                 return errorTemplate;
             }
         }
@@ -2594,7 +2597,7 @@ public final class BaseUtils{
          * @return 错误信息队列
          */
         public static List<String> checkRegexListToList(List<String[]> list, RegularlyEnum[] regularlyEnums, Integer[] checkSubscripts, String errorTemplate){
-            String errorMsg = BaseUtils.RegularlyUtils.getErrorMsgTemplate(errorTemplate);
+            String errorMsg = RegularlyUtils.getErrorMsgTemplate(errorTemplate);
             List<String> msgs = new ArrayList<>();
             Integer max = 0;
             for(int j = 0; j < (checkSubscripts == null ? 0 : checkSubscripts.length); j++){
@@ -2603,7 +2606,7 @@ public final class BaseUtils{
                 }
             }
             int i = 0;
-            list = BaseUtils.ListUtils.completionArray(list, max);
+            list = ListUtils.completionArray(list, max);
             for(String[] dataSource : list){
                 int j = 0;
                 for(Integer checkSubscript : checkSubscripts){
@@ -2627,7 +2630,7 @@ public final class BaseUtils{
          * @return 错误信息队列
          */
         public static List<String> checkRegexListToList(List<String[]> list, RegularlyEnum[] regularlyEnums, Integer[] checkSubscripts){
-            return BaseUtils.RegularlyUtils.checkRegexListToList(list, regularlyEnums, checkSubscripts, null);
+            return RegularlyUtils.checkRegexListToList(list, regularlyEnums, checkSubscripts, null);
         }
 
 //		/**
@@ -2654,7 +2657,7 @@ public final class BaseUtils{
             Map<String, Object> returnMap = new HashMap<>();
             for(Map.Entry<String, Object> entry : map.entrySet()){
                 String keyName = entry.getKey();
-                keyName = BaseUtils.StringUtilsSon.markToHump(keyName, mark, 0);
+                keyName = StringUtilsSon.markToHump(keyName, mark, 0);
                 returnMap.put(keyName, entry.getValue());
             }
             return returnMap;
@@ -2707,4 +2710,46 @@ public final class BaseUtils{
 
     }
 
+    static class FileUtils{
+        /***
+         * 根据路径获取文件内容
+         * @param path
+         * @return
+         */
+        public static String readFile(String path){
+            try{
+                StringBuffer sb = new StringBuffer("");
+                FileReader reader = new FileReader(path);
+                BufferedReader br = new BufferedReader(reader);
+                String str;
+                while((str = br.readLine()) != null){
+                    sb.append(str + "/n");
+                }
+                br.close();
+                reader.close();
+                return sb.toString();
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
+            return null;
+        }
+
+        /***
+         * 根据路径获取文件缓冲流
+         * @param path
+         * @return
+         */
+        public static BufferedReader getBufferedReader(String path){
+            try{
+                return new BufferedReader(new FileReader(path));
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
+            return null;
+        }
+    }
+
+    public static void main(String[] args){
+
+    }
 }

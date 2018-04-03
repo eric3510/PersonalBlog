@@ -5,6 +5,8 @@ import lombok.Data;
 
 @Data
 public class BaseDO extends Paging{
+    private String id;
+
     /***
      * 从do实例中获取表名
      * @return

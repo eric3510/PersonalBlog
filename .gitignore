@@ -5,3 +5,6 @@ personal-blog.iml
 .gradle
 gradle
 out
+pole/logs
+mvnw
+mvnw.cmd
