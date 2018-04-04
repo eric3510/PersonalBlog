@@ -8,9 +8,9 @@ import java.util.List;
 /**
  * @author eric E-mail:
  * @version 创建时间：2018/4/3 上午11:13
- * ConfigInnerSevice
+ * ConfigInnerService
  */
-public interface ConfigInnerSevice extends BaseService{
+public interface ConfigInnerService extends BaseService{
     /***
      * 获取所有url统计记录
      * @return

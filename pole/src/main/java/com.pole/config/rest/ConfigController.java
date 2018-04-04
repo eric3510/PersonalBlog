@@ -1,7 +1,7 @@
 package com.pole.config.rest;
 
+import com.pole.config.innerservice.ConfigInnerService;
 import com.pole.config.model.UrlHotSpotsDO;
-import com.pole.config.innerservice.ConfigInnerSevice;
 import com.pole.core.pojo.ServerResponse;
 import com.pole.core.utils.BusinessException;
 import org.slf4j.Logger;
@@ -20,13 +20,13 @@ public class ConfigController{
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    ConfigInnerSevice configInnerSevice;
+    ConfigInnerService configInnerService;
 
     @RequestMapping("/save/url")
     public ServerResponse saveUrl(final String name, final String url){
         ServerResponse serverResponse = new ServerResponse();
         try{
-            configInnerSevice.saveUrlHotSpots(new UrlHotSpotsDO(name, url));
+            configInnerService.saveUrlHotSpots(new UrlHotSpotsDO(name, url));
             serverResponse.setCode(ServerResponse.SUCCESS);
             serverResponse.setMsg(ServerResponse.SUCCESS_MSG);
         }catch(BusinessException bx){

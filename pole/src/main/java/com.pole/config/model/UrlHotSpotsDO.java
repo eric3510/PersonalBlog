@@ -1,9 +1,12 @@
 package com.pole.config.model;
 
+import com.pole.core.annotation.FieldName;
 import com.pole.core.annotation.TableName;
 import com.pole.core.pojo.BaseDO;
+import com.pole.logresolve.model.CreateUrlStatisticsTableDO;
 import lombok.Data;
 
+import java.util.Date;
 import java.util.UUID;
 
 /***
@@ -14,6 +17,8 @@ import java.util.UUID;
 @Data
 @TableName("url_hot_spot")
 public class UrlHotSpotsDO extends BaseDO{
+    public static final String URL_STATISTICS = "url_statistics_";
+
     /***
      * 名称
      */
@@ -23,6 +28,24 @@ public class UrlHotSpotsDO extends BaseDO{
      * 需要统计的url
      */
     private String url;
+
+    /***
+     * 自动创建的表名
+     */
+    @FieldName("table_name")
+    private String tableName;
+
+    /***
+     * 创建时间
+     */
+    @FieldName("create_time")
+    private Date createTime;
+
+    /***
+     * 更新时间
+     */
+    @FieldName("update_time")
+    private Date updateTime;
 
     public UrlHotSpotsDO(String name, String url){
         this.name = name;

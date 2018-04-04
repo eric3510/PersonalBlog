@@ -9,7 +9,6 @@ import lombok.Data;
  */
 @Data
 public class ServerResponse{
-
     public final static int SUCCESS = 0;
     public final static int ERROR_NETWORK = 1;
     public final static int ERROR_SERVER = 2;

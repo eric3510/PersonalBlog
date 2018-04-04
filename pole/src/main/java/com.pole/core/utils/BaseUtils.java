@@ -2710,7 +2710,7 @@ public final class BaseUtils{
 
     }
 
-    static class FileUtils{
+    public static class FileUtils{
         /***
          * 根据路径获取文件内容
          * @param path
