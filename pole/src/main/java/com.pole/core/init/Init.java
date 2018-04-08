@@ -4,12 +4,17 @@ import com.pole.config.innerservice.ConfigInnerService;
 import com.pole.config.model.UrlHotSpotsDO;
 import com.pole.core.configs.PoleConfig;
 import com.pole.core.service.DaoMysqlService;
+import com.pole.core.utils.BusinessException;
 import com.pole.logresolve.model.CreateUrlStatisticsTableDO;
+import com.pole.logresolve.service.LogResolveService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.scheduling.TaskScheduler;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.scheduling.commonj.TimerManagerTaskScheduler;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -23,7 +28,6 @@ import java.util.Map;
  */
 @Component
 public class Init implements ApplicationRunner{
-    private static String lock = "0";
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
@@ -35,26 +39,32 @@ public class Init implements ApplicationRunner{
     @Autowired
     private DaoMysqlService daoMysqlService;
 
+    @Autowired
+    private LogResolveService logResolveService;
+
     @Override
     public void run(ApplicationArguments args) throws Exception{
-//        this.timerCreateStatisticsTable();
+        this.timerCreateStatisticsTable();
+
     }
 
-    public void timerCreateStatisticsTable(){
+    /***
+     * 监控是否有新的需要统计的url添加
+     */
+    private void timerCreateStatisticsTable(){
         Thread thread = new Thread(){
             @Override
             public void run(){
-                try{
-                    while(true){
+                while(true){
+                    try{
                         List<UrlHotSpotsDO> urlHotSpotsDOList = configInnerService.getAllUrlHotSpots();
                         //循环遍历是否需要新建表
                         for(UrlHotSpotsDO urlHotSpotsDO : urlHotSpotsDOList){
-                            String tableName = urlHotSpotsDO.getTableName();
-                            String createTime = UrlHotSpotsDO.URL_STATISTICS + tableName;
+                            String createTableName = urlHotSpotsDO.getPrefixTableName();
                             String selectFromName = String.format(
                                     "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='%s' AND TABLE_NAME='%s'",
                                     poleConfig.getDbName(),
-                                    createTime
+                                    createTableName
                             );
                             Map<String, Object> selectFromNameParamMap = new HashMap<>();
                             List<HashMap> tableNameList = daoMysqlService.list(HashMap.class, selectFromName, selectFromNameParamMap);
@@ -63,19 +73,27 @@ public class Init implements ApplicationRunner{
                                     continue;
                                 }
                             }
-                            CreateUrlStatisticsTableDO createUrlStatisticsTableDO = new CreateUrlStatisticsTableDO(tableName);
+                            CreateUrlStatisticsTableDO createUrlStatisticsTableDO = new CreateUrlStatisticsTableDO(createTableName);
                             String createTableSql = createUrlStatisticsTableDO.getCreateTableSql();
                             Map<String, Object> paramMap = new HashMap<>();
                             daoMysqlService.update(createTableSql, paramMap);
-                            logger.info("成功创建表:" + tableName);
+                            logger.info("成功创建表:" + createTableName);
                         }
                         Thread.sleep(5000);
+                    }catch(Exception ex){
+                        ex.printStackTrace();
                     }
-                }catch(Exception ex){
-                    ex.printStackTrace();
                 }
             }
         };
         thread.start();
+    }
+
+    /***
+     * 每天凌晨三点开始统计url
+     */
+    @Scheduled(cron="0 0 3 * * ?")
+    private void statisticsUrl(){
+        logResolveService.logParsing();
     }
 }

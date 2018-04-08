@@ -17,7 +17,7 @@ import java.util.UUID;
 @Data
 @TableName("url_hot_spot")
 public class UrlHotSpotsDO extends BaseDO{
-    public static final String URL_STATISTICS = "url_statistics_";
+    private static final String URL_STATISTICS = "url_statistics_";
 
     /***
      * 名称
@@ -50,6 +50,10 @@ public class UrlHotSpotsDO extends BaseDO{
     public UrlHotSpotsDO(String name, String url){
         this.name = name;
         this.url = url;
+    }
+
+    public String getPrefixTableName(){
+        return URL_STATISTICS + this.tableName;
     }
 
     public UrlHotSpotsDO(){}

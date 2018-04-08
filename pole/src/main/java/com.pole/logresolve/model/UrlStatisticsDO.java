@@ -1,8 +1,10 @@
 package com.pole.logresolve.model;
 
 import com.pole.core.annotation.FieldName;
+import com.pole.core.annotation.TableName;
 import com.pole.core.pojo.BaseDO;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Date;
 

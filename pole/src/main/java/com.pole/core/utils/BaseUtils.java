@@ -2749,7 +2749,25 @@ public final class BaseUtils{
         }
     }
 
-    public static void main(String[] args){
+    public static class DateUtils{
+        /***
+         * 获取当前日期的前几天或者后几天
+         * @param date 日期
+         * @param offsetDayNum 正数为后几天, 负数为后几天
+         * @param format 格式化
+         * @return
+         */
+        public static String getSpecifiedDate(Date date, int offsetDayNum, String format){
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(date);
+            cal.add(Calendar.DATE, offsetDayNum);
+            return BaseUtils.formatDate(cal.getTime(), format);
+        }
+    }
 
+    public static void main(String[] args){
+        for(int i = 0; i < 1000; i++){
+            System.out.println(UUID.randomUUID().toString().replace("-", ""));
+        }
     }
 }

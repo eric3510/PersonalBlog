@@ -461,16 +461,11 @@ public class DaoMysqlServiceImpl implements DaoMysqlService{
             Map<String, Object> map = new HashMap<>();
             BaseUtils.copyMap(map, obj);
             Map<String, Object>[] objects = new HashMap[saveFieldNames.length];
+//            objects[0] = this.getSaveMap("VARCHAR", this.getId(obj));
             int i = 0;
             for(String saveField : saveFieldNames){
-                Map<String, Object> paramMap = new HashMap<>();
-                Object param = map.get(saveField);
-                param = getTableFieldName(saveFieldNames, map, i, saveField, param);
-                paramMap.put("value", param);
-                String type;
-                type = DaoMysqlServiceImpl.getJdbcType(param);
-                paramMap.put("type", type);
-                objects[i] = paramMap;
+                Object value = map.get(saveField);
+                objects[i] = this.getSaveMap(DaoMysqlServiceImpl.getJdbcType(value), getTableFieldName(saveFieldNames, map, i, saveField, value));
                 i++;
             }
             saveValues.add(objects);
@@ -484,6 +479,25 @@ public class DaoMysqlServiceImpl implements DaoMysqlService{
         saveResult.setInfluencesRow(baseMapper.saveBatch(saveDO));
         saveResult.setId(saveDO.getId());
         return saveResult;
+    }
+
+    private Map<String, Object> getSaveMap(String type, Object value){
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put("type", type);
+        paramMap.put("value", value);
+        return paramMap;
+    }
+
+    private String getId(Object idObj){
+        String id = null;
+        try{
+            Method getIdMethod = idObj.getClass().getMethod("getId");
+            id = (String)getIdMethod.invoke(idObj);
+            return id;
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
     }
 
     /***
@@ -501,10 +515,19 @@ public class DaoMysqlServiceImpl implements DaoMysqlService{
      * @return return
      */
     public int save(Object object){
+        return this.save(object, null);
+    }
+
+    /***
+     * 添加一个实体类
+     * @param object dao实体类对象
+     * @return return
+     */
+    public int save(Object object, String tableName){
         List<Object> list = new ArrayList<>();
         list.add(object);
         SaveResult saveResult = new SaveResult();
-        saveResult = this.saveBatch(list, null);
+        saveResult = this.saveBatch(list, tableName);
         int influencesRow = saveResult.getInfluencesRow();
         String setIdT = "setId";
         try{
@@ -589,17 +612,20 @@ public class DaoMysqlServiceImpl implements DaoMysqlService{
         }
     }
 
-    public int updateById(Object updateSet){
+    public int updateById(Object updateSet, String tableName){
         Map<String, Object> resultMap = new HashMap<>();
         BaseUtils.copyMap(resultMap, updateSet);
         TableName tableNameAnno = updateSet.getClass().getAnnotation(TableName.class);
         this.removeMapField(resultMap, BaseDO.class);
         this.removeMapField(resultMap, Paging.class);
-        Object id = resultMap.get("id");
         resultMap.remove("id");
         this.removeNullField(resultMap);
         this.fieldListToMap(updateSet, resultMap);
-        return this.updateById((String) id, resultMap, tableNameAnno.value());
+        return this.updateById(this.getId(updateSet), resultMap, tableName == null ? tableNameAnno.value() : tableName);
+    }
+
+    public int updateById(Object updateSet){
+        return this.updateById(updateSet, null);
     }
 
     /***
@@ -1004,6 +1030,7 @@ public class DaoMysqlServiceImpl implements DaoMysqlService{
     private static String[] getObjectFieldNames(Class c){
         Field[] fields = c.getDeclaredFields();
         List<String> fieldNameList = new ArrayList<>();
+        fieldNameList.add("id");
         for(Field field : fields){
             field.setAccessible(true);
             if(field.isAnnotationPresent(Ignore.class)){

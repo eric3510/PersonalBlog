@@ -144,6 +144,15 @@ public interface DaoMysqlService{
      */
     int save(Object object);
 
+
+    /***
+     * 添加一个实体类
+     * @param tableName 表名
+     * @param object dao实体类对象
+     * @return return
+     */
+    int save(Object object, String tableName);
+
     /***
      * 更新数据原生sql
      * @param sql sql
@@ -175,6 +184,9 @@ public interface DaoMysqlService{
      *
      */
     int updateById(Object updateSet);
+
+
+    int updateById(Object updateSet, String tableName);
 
     /***
      * 根据keyName字段对应的值修改一批记录

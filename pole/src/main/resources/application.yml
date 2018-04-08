@@ -15,5 +15,5 @@ mybatis:
   mapper-locations: classpath:mybatis/*.xml #Mapper的xml文件
 
 pole-config:
-  logPath: /Users/eric/logs/localhost_access_log.2018-03-27.txt
+  logPath: /Users/eric/logs/newweb.access.log-20180327
   dbName: data_statistics
