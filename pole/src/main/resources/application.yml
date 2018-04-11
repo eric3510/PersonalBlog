@@ -11,9 +11,9 @@ spring:
     platform: mysql
 
 mybatis:
-  type-aliases-package: com.personalblog
+  type-aliases-package: com.pole
   mapper-locations: classpath:mybatis/*.xml #Mapper的xml文件
 
 pole-config:
-  logPath: /Users/eric/logs/newweb.access.log-20180327
+  logPath: /Users/eric/logs/server1/,/Users/eric/logs/server2/
   dbName: data_statistics
