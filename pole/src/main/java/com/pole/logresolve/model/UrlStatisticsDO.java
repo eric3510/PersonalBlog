@@ -16,20 +16,20 @@ public class UrlStatisticsDO extends BaseDO{
     /***
      * 此条记录的统计时间的整形表达形式
      */
-    @FieldName("statistics_time")
-    private Integer statisticsTime;
+    @FieldName("new_time")
+    private Integer newTime;
 
     /***
      * 访问数量
      */
-    @FieldName("access_number")
-    private Long accessNumber;
+    @FieldName("increase_num")
+    private Long increaseNum;
 
     /***
      * 当前总访问数量
      */
-    @FieldName("total_access_number")
-    private Long totalAccessNumber;
+    @FieldName("current_num")
+    private Long currentNum;
 
     /***
      * 创建时间

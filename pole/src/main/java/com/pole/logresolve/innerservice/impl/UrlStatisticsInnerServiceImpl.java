@@ -49,6 +49,6 @@ public class UrlStatisticsInnerServiceImpl extends BaseServiceImpl implements Ur
 
     @Override
     public UrlStatisticsDO getStatisticsTime(Integer statisticsTime, String tableName){
-        return this.getDao().getByKey(UrlStatisticsDO.class, "statistics_time", statisticsTime, tableName);
+        return this.getDao().getByKey(UrlStatisticsDO.class, "new_time", statisticsTime, tableName);
     }
 }

@@ -456,11 +456,13 @@ public class DaoMysqlServiceImpl implements DaoMysqlService{
         saveDO.setTableName(tableName);
         String[] saveFieldNames = null;
         List<Map<String, Object>[]> saveValues = new ArrayList<>();
+        String id = "";
         for(Object obj : list){
             this.checkBaseDOException(obj);
             saveFieldNames = DaoMysqlServiceImpl.getObjectFieldNames(obj.getClass());
             Map<String, Object> map = new HashMap<>();
             BaseUtils.copyMap(map, obj);
+            id = (String)map.get("id");
             Map<String, Object>[] objects = new HashMap[saveFieldNames.length];
 //            objects[0] = this.getSaveMap("VARCHAR", this.getId(obj));
             int i = 0;
@@ -478,7 +480,7 @@ public class DaoMysqlServiceImpl implements DaoMysqlService{
         saveDO.setSaveValues(saveValues);
         SaveResult saveResult = new SaveResult();
         saveResult.setInfluencesRow(baseMapper.saveBatch(saveDO));
-        saveResult.setId(saveDO.getId());
+        saveResult.setId(id);
         return saveResult;
     }
 

@@ -1,5 +1,5 @@
 server:
-    port: 8080
+    port: 8666
     context-path:
 
 spring:
@@ -15,5 +15,7 @@ mybatis:
   mapper-locations: classpath:mybatis/*.xml #Mapper的xml文件
 
 pole-config:
-  logPath: /Users/eric/logs/server1/,/Users/eric/logs/server2/
+  logPath: /usr/data-statistics/statistics-log/server1/,/usr/data-statistics/statistics-log/server2/
   dbName: data_statistics
+#   /Users/eric/logs/server1/,/Users/eric/logs/server2/
+#   /usr/data-statistics/statistics-log/server1/,/usr/data-statistics/statistics-log/server2/

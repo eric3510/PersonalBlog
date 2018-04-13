@@ -95,14 +95,14 @@ public class LogResolveServiceImpl extends BaseServiceImpl implements LogResolve
                 Date nowDate = new Date();
                 urlStatisticsDO.setCreateTime(nowDate);
                 urlStatisticsDO.setUpdateTime(nowDate);
-                urlStatisticsDO.setStatisticsTime(todayInt);
-                urlStatisticsDO.setAccessNumber(counter);
+                urlStatisticsDO.setNewTime(todayInt);
+                urlStatisticsDO.setIncreaseNum(counter);
                 Integer yesterdayInt = Integer.parseInt(BaseUtils.DateUtils.getSpecifiedDate(todayDate, -1, format));
                 UrlStatisticsDO yesterdayUrlStatisticsDO = urlStatisticsInnerService.getStatisticsTime(yesterdayInt, urlHotSpotsDO.getPrefixTableName());
                 if(yesterdayUrlStatisticsDO == null){
-                    urlStatisticsDO.setTotalAccessNumber(counter);
+                    urlStatisticsDO.setCurrentNum(counter);
                 }else{
-                    urlStatisticsDO.setTotalAccessNumber(counter + yesterdayUrlStatisticsDO.getTotalAccessNumber());
+                    urlStatisticsDO.setCurrentNum(counter + yesterdayUrlStatisticsDO.getCurrentNum());
                 }
                 UrlStatisticsDO todayUrlHotSpotsDO = urlStatisticsInnerService.getStatisticsTime(todayInt, urlHotSpotsDO.getPrefixTableName());
                 if(todayUrlHotSpotsDO == null){//如果等于空的话则添加
@@ -116,8 +116,8 @@ public class LogResolveServiceImpl extends BaseServiceImpl implements LogResolve
                 }else{//否则为更新
                     urlStatisticsDO.setUpdateTime(nowDate);
                     urlStatisticsDO.setId(todayUrlHotSpotsDO.getId());
-                    urlStatisticsDO.setAccessNumber(todayUrlHotSpotsDO.getAccessNumber() + counter);
-                    urlStatisticsDO.setTotalAccessNumber(todayUrlHotSpotsDO.getTotalAccessNumber() + counter);
+                    urlStatisticsDO.setIncreaseNum(todayUrlHotSpotsDO.getIncreaseNum() + counter);
+                    urlStatisticsDO.setCurrentNum(todayUrlHotSpotsDO.getCurrentNum() + counter);
                     urlStatisticsDO.setCreateTime(null);
                     this.getDao().updateById(urlStatisticsDO, urlHotSpotsDO.getPrefixTableName());
                 }

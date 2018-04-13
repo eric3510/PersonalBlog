@@ -21,13 +21,13 @@ public class CreateUrlStatisticsTableDO extends BaseDO{
         String createTableSql = String.format(
                     "CREATE TABLE `%s` (\n" +
                     "  `id` varchar(100) NOT NULL,\n" +
-                    "  `statistics_time` int NOT NULL COMMENT '此条记录的统计时间的整形表达形式',\n" +
-                    "  `access_number` bigint(20) NOT NULL COMMENT '访问数量',\n" +
-                    "  `total_access_number` bigint(20) NOT NULL COMMENT '当前总访问数量',\n" +
+                    "  `new_time` int NOT NULL COMMENT '此条记录的统计时间的整形表达形式',\n" +
+                    "  `increase_num` bigint(20) NOT NULL COMMENT '访问数量',\n" +
+                    "  `current_num` bigint(20) NOT NULL COMMENT '当前总访问数量',\n" +
                     "  `create_time` datetime NOT NULL COMMENT '创建时间',\n" +
                     "  `update_time` datetime NOT NULL COMMENT '更新时间',\n" +
                     "  PRIMARY KEY (`id`),\n" +
-                    "  UNIQUE KEY `statistics_time` (`statistics_time`) USING BTREE\n" +
+                    "  UNIQUE KEY `new_time` (`new_time`) USING BTREE\n" +
                     ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", this.getTableName());
         return createTableSql;
     }

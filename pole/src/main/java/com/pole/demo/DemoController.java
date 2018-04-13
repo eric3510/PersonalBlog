@@ -29,15 +29,16 @@ public class DemoController{
 
     @RequestMapping("/")
     public String home(){
-        UrlHotSpotsDO urlHotSpotsDO = new UrlHotSpotsDO();
-        urlHotSpotsDO.setId(uniqueSequenceServiceService.getUUID());
-        urlHotSpotsDO.setName("demo");
-        urlHotSpotsDO.setTableName("demo");
-        urlHotSpotsDO.setImmediately(false + "");
-        Date date = new Date();
-        urlHotSpotsDO.setCreateTime(date);
-        urlHotSpotsDO.setUpdateTime(date);
-        urlHotSpotsDO.setUrl("www.jd.com23333");
+        logResolveService.statisticsLastDay();
+//        UrlHotSpotsDO urlHotSpotsDO = new UrlHotSpotsDO();
+//        urlHotSpotsDO.setId(uniqueSequenceServiceService.getUUID());
+//        urlHotSpotsDO.setName("demo");
+//        urlHotSpotsDO.setTableName("demo");
+//        urlHotSpotsDO.setImmediately(false + "");
+//        Date date = new Date();
+//        urlHotSpotsDO.setCreateTime(date);
+//        urlHotSpotsDO.setUpdateTime(date);
+//        urlHotSpotsDO.setUrl("www.jd.com23333");
         return "hello world";
     }
 }

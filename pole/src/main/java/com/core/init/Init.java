@@ -1,6 +1,8 @@
 package com.core.init;
 
+import com.core.service.UniqueSequenceServiceService;
 import com.pole.logresolve.innerservice.UrlHotSpotsInnerService;
+import com.pole.logresolve.model.SysMenuDO;
 import com.pole.logresolve.model.UrlHotSpotsDO;
 import com.core.configs.PoleConfig;
 import com.core.service.DaoMysqlService;
@@ -39,6 +41,9 @@ public class Init implements ApplicationRunner{
     @Autowired
     private LogResolveService logResolveService;
 
+    @Autowired
+    private UniqueSequenceServiceService uniqueSequenceServiceService;
+
     @Override
     public void run(ApplicationArguments args) throws Exception{
         this.timerCreateStatisticsTable();
@@ -74,6 +79,8 @@ public class Init implements ApplicationRunner{
                             Map<String, Object> paramMap = new HashMap<>();
                             daoMysqlService.update(createTableSql, paramMap);
                             logger.info("成功创建表:" + createTableName);
+                            String id = saveMenu(urlHotSpotsDO.getName(), urlHotSpotsDO.getTableName());
+                            logger.info("添加到菜单成功:id = " + id + " name = " + urlHotSpotsDO.getName());
                             if(urlHotSpotsDO.getImmediately().equals("true")){//判断是否需要立即统计
                                 logResolveService.logStatisticsByUrl(urlHotSpotsDO);
                             }
@@ -88,10 +95,25 @@ public class Init implements ApplicationRunner{
         thread.start();
     }
 
+    private SysMenuDO getSysMenuDOByName(String name){
+        return daoMysqlService.getByKey(SysMenuDO.class, "`name`", name, new SysMenuDO().tableName());
+    }
+
+    private String saveMenu(String name, String tableName){
+        SysMenuDO sysMenuDOByName = this.getSysMenuDOByName("访问统计");
+        String parentId = sysMenuDOByName.getId();
+        SysMenuDO sysMenuDO = new SysMenuDO(name, parentId);
+        String id = uniqueSequenceServiceService.getUUID();
+        sysMenuDO.setId(id);
+        sysMenuDO.setHref(SysMenuDO.URL_STATISTICS + tableName);
+        daoMysqlService.save(sysMenuDO);
+        return sysMenuDO.getId();
+    }
+
     /***
      * 每天凌晨三点开始统计url(只统计最后一天的log)
      */
-    @Scheduled(cron="0 0 3 * * ?")
+    @Scheduled(cron="0 0 2 * * ?")
     private void statisticsUrl(){
         logResolveService.statisticsLastDay();
     }
